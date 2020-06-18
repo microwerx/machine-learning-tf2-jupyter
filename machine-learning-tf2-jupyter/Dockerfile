@@ -1,0 +1,54 @@
+FROM tensorflow/tensorflow:latest-gpu-jupyter
+
+LABEL version="0.1"
+LABEL maintainer="microwerx@outlook.com"
+LABEL description="Machine Learning with TensorFlow 1.x GPU/Jupyter, Keras, PyTorch, and more."
+
+# Packages
+# - TensorFlow with GPU and Jupyter Support
+# - Pandas
+# - Matplotlib
+
+RUN echo 'export PATH=~/.local/bin:$PATH' >> $HOME/.bashrc
+
+RUN apt-get update -q
+RUN apt-get upgrade -y -q
+
+RUN echo "America/New_York" > /etc/timezone
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+RUN apt-get install -y -q nano vim-tiny tilde tmux wget curl
+RUN apt-get install --no-install-recommends -y -q \
+    build-essential \
+    git \
+    python3 \
+    python3-dev \
+    python3-setuptools \
+    python3-zmq \
+    python3-opencv
+
+RUN /usr/bin/python3 -m pip install --upgrade pip
+
+RUN pip install -q wheel
+RUN pip install -q tensorflow-hub
+RUN pip install -q tfds-nightly
+RUN pip install -q seaborn
+RUN pip install -q git+https://github.com/tensorflow/docs
+RUN pip install -q pyyaml h5py
+RUN pip install -q keras-tuner
+RUN pip install -q torch
+RUN pip install -q scikit-image
+RUN pip install -q mtcnn
+
+RUN apt install -y python3-pydot
+
+# RUN pip install
+
+EXPOSE 8888
+
+RUN mkdir /tensorflow_datasets
+RUN chown 1000:1000 /tensorflow_datasets
+RUN chown 1000:1000 /tf
+
+WORKDIR /tf
+COPY notebooks/siggraph2020 siggraph2020
+RUN chown -R 1000:1000 /tf
