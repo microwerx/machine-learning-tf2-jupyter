@@ -22,12 +22,12 @@ cowsay "Installing OpenCV"
 pip3 install opencv-contrib-python
 pip3 install mtcnn
  
-cowsay "Let's set up a password"
-python3 jupyter password
+# cowsay "Let's set up a password"
+# python3 jupyter password
 
 # deactivate
 # exit 0
- 
+
 cowsay "Installing Tensorflow"
 # Tensorflow + Keras
 pip3 install tensorflow
@@ -36,7 +36,7 @@ pip3 install tensorflow-hub
 pip3 install tfds-nightly
 pip3 install keras-tuner
 pip3 install keras-vggface
- 
+
 cowsay "Installing online tools"
 # Install from web
 pip3 install git+https://github.com/tensorflow/docs

@@ -13,10 +13,12 @@ apt install -y -q build-essential git
 # apt install -y -q firefox wmaker
  
 cowsay "Installing Octave and Math libraries"
-apt install -y octave libatlas-base-dev libopenblas-dev gfortran
+apt install -y octave libatlas-base-dev libopenblas-dev liblapack-dev gfortran
+apt install -y libhdf5-serial-dev
  
 cowsay "Installing python3 base"
 apt install -y python3 python3-pip python3-venv
+apt install -y python3-tk python-imaging-tk libgtk-3-dev
 # apt install -y python3-setuptools python3-zmq python3-opencv python3-pydot python3-pip python3-h5py python3-imageio
  
 apt autoremove -y

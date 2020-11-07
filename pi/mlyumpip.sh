@@ -29,7 +29,7 @@ exit 0
  
 cowsay "Installing Tensorflow"
 # Tensorflow + Keras
-pip3 install tensorflow
+pip3 install tensorflow-nightly
 pip3 install tensorflow-tensorboard
 pip3 install tensorflow-hub
 pip3 install tfds-nightly
