@@ -1,6 +1,8 @@
 # Need to run
-virtualenv --system-site-packages mlenv
-./mlenv/Scripts/activate.ps1
+
+# virtualenv --system-site-packages mlenv
+# ./mlenv/Scripts/activate.ps1
+# source ./mlenv/bin/activate
 
 python -m pip cache purge
 python -m pip install --upgrade pip
@@ -14,7 +16,6 @@ python -m pip install pandas
 python -m pip install seaborn
 # python -m pip install torch
 python -m pip install scikit-image
-python -m pip install mtcnn
  
 echo "Installing OpenCV"
 #python -m pip install picamera[array]
@@ -37,4 +38,4 @@ echo "Installing online tools"
 # Install from web
 python -m pip install git+https://github.com/tensorflow/docs
 
-deactivate
+# deactivate
