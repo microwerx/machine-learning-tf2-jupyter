@@ -16,6 +16,9 @@ pip3 install seaborn
 # pip3 install torch
 pip3 install scikit-image
 pip3 install mtcnn
+pip3 install scipy
+pip3 install imutils
+pip3 install json_minify
  
 cowsay "Installing OpenCV"
 #pip3 install picamera[array]
@@ -25,8 +28,8 @@ pip3 install mtcnn
 # cowsay "Let's set up a password"
 # python3 jupyter password
 
-# deactivate
-# exit 0
+deactivate
+exit 0
 
 cowsay "Installing Tensorflow"
 # Tensorflow + Keras
